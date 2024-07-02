@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-100 p-8;
+  }
+}
+
+@layer components {
+  .section-content1 {
+    @apply bg-gradient-to-r from-teal-600 via-teal-800 to-teal-950 rounded-xl flex justify-center items-center p-6;
+  }
+
+  .btn-content {
+    @apply bg-gradient-to-r from-teal-950 to-teal-800 text-white flex flex-row border border-neutral-500 rounded-xl p-2 place-content-between;
+  }
+
+  .btn-content2 {
+    @apply bg-gradient-to-r from-teal-800 to-teal-950 text-white flex flex-row border border-neutral-500 rounded-xl p-2 place-content-between;
+  }
+
+  .bd-gradient {
+    @apply bg-gradient-to-r from-neutral-500 to-teal-600;
+  }
+  .flex-content-center {
+    @apply flex justify-center items-center;
+  }
+  .text-white-sh {
+    @apply text-white [text-shadow:_2px_2px_2px_rgb(0_0_0_/_70%)]";
+  }
+  .pg {
+    @apply relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300;
+  }
+  .pp {
+    @apply bg-slate-100;
+  }
+}

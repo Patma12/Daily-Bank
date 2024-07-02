@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <title>Daily Bank</title>
+  </head>
+  <body>
+    <h1 class="text-2xl font-bold text-neutral-600 py-2">
+      Daily Bank Transaction Revenue
+    </h1>
+
+    <div class="section-content1 grid grid-cols-3">
+      <div class="border-red-600 h-full flex items-center justify-center">
+        <div
+          class="text-white [text-shadow:_2px_2px_2px_rgb(0_0_0_/_70%)] flex flex-col justify-center items-center border-solid border-4 rounded-full border-teal-200/20 w-56 h-56"
+        >
+          <h1 class="text-3xl">68,666.00</h1>
+          <p class="text-l">Total Revenew</p>
+        </div>
+      </div>
+
+      <div class="col-span-2 grid grid-cols-2 gap-4">
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Front Desk Bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">10,150.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Credit Card Water</p>
+            <p>TPark Revenue</p>
+          </div>
+          <p class="flex-content-center">0.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Guest Deposit Bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">41,000.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Water Park Bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">1,480.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>All Outlet Bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">13,575.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Agoda bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">0.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col mr-6">
+            <p>Credit Card Hotel</p>
+            <p>Revenue</p>
+          </div>
+          <p class="flex-content-center">0.00</p>
+        </div>
+
+        <div class="btn-content">
+          <div class="flex flex-col">
+            <p>Elexa EGAT Bank</p>
+            <p>Trasfer Revenue</p>
+          </div>
+          <p class="flex-content-center">0.00</p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div>
+      <div>
+        <h1 class="text-2xl font-bold text-neutral-600 py-2">Detail</h1>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="btn-content2">
+            <div class="flex flex-col mr-8">
+              <p>Trasfer Revenue</p>
+              <p>&nbsp;</p>
+            </div>
+            <div class="flex-content-center">0.00</div>
+          </div>
+          <div class="btn-content2">
+            <div class="flex flex-col mr-8">
+              <p>Split Credit Card Hotel</p>
+              <p>Revenue</p>
+            </div>
+            <div class="flex-content-center">0.00</div>
+          </div>
+          <div class="btn-content2 ">
+            <div class="">
+              <p>Transfer Transaction</p>
+            </div>
+            <div class="flex-content-center">1</div>
+          </div>
+          <div class="btn-content2">
+            <div class="flex flex-col">
+              <p>Credit Card Hotel</p>
+              <p>Transfer Transaction</p>
+            </div>
+            <div class="flex-content-center">0</div>
+          </div>
+          <div class="btn-content2">
+            <div class="flex flex-col">
+              <p>Split Credit Card</p>
+              <p>Hotel Transaction</p>
+            </div>
+            <div class="flex-content-center">0</div>
+          </div>
+          <div class="btn-content2">
+            <div class="">
+              <p>Total Transection</p>
+              
+            </div>
+            <div class="flex-content-center">48</div>
+          </div>
+          <div class="btn-content2">
+            <div class="flex flex-col">
+              <p>No income Type</p>
+            </div>
+            <div class="flex-content-center">2</div>
+          </div>
+          <div class="btn-content2">
+            <div class="flex flex-col">
+              <p>No income Revenue</p>
+            </div>
+            <div class="flex-content-center">2,061.00</div>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="grid grid-cols-2 gap-4 py-4 text-center">
+        <div class="flex-col rounded-xl bg-white p-2">
+          <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+
+          <script>
+            const xValues = [
+              "6/23",
+              "6/24",
+              "6/25",
+              "6/26",
+              "6/27",
+              "6/28",
+              "6/29",
+            ];
+            const yValues = [
+              121000, 95400, 63000, 105000, 44900, 137300, 68700,
+            ];
+            new Chart("myChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [
+                  {
+                    backgroundColor: "#0d9488",
+                    data: yValues,
+                    label: "last 7 day revenue",
+                  },
+                ],
+              },
+              options: {
+                legend: { display: true },
+                title: {
+                  display: false,
+                  text: "last ",
+                },
+                scales: {
+                  yAxes: [{ ticks: { min: 0, max: 200000 } }],
+                },
+              },
+            });
+          </script>
+
+          <select
+            class="btn-card bg-teal-600 px-3 py-1 rounded-lg text-cente text-white"
+          >
+            <option value="">7 Days</option>
+            <option value="">14 Days</option>
+            <option value="">1 Months</option>
+            <option value="">3 Months</option>
+            <option value="">6 Months</option>
+            <option value="">1 Years</option>
+          </select>
+        </div>
+
+        <div class="flex-col rounded-xl bg-white">
+          <canvas id="myChart2" style="width: 100%; max-width: 600px"></canvas>
+
+          <script>
+            const xValues2 = ["Yesterday", "Today", "Average"];
+            const yValues2 = [137300, 68700, 94700];
+
+            new Chart("myChart2", {
+              type: "bar",
+              data: {
+                labels: xValues2,
+                datasets: [
+                  {
+                    backgroundColor: "#0d9488",
+                    borderWidth: 1,
+                    data: yValues2,
+                    label: "Forecast Revenue",
+                  },
+                ],
+              },
+              options: {
+                legend: { display: true },
+                title: {
+                  display: false,
+                  position: "bottom",
+                  text: "last ",
+                },
+                scales: {
+                  yAxes: [{ ticks: { min: 0, max: 140000 } }],
+                },
+              },
+            });
+          </script>
+
+          <select
+            class="btn-card bg-teal-600 px-3 py-1 rounded-lg text-center text-white"
+          >
+            <option value="">Switch to Time</option>
+            <option value="">Switch to date</option>
+            <option value="">Switch to month</option>
+          </select>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl">
+        <div>1</div>
+
+        <div class="grid grid-rows-3 p-2">
+          <table class="table-auto w-full">
+            <caption class="caption-top py-2">
+              <div class="float-start">
+                <select class="px-3 py-1 rounded-lg border-2">
+                  <option value="">10</option>
+                  <option value="">20</option>
+                  <option value="">30</option>
+                  <option value="">50</option>
+                  <option value="">100</option>
+                </select>
+                <label for="" class="mx-2"> entries per page </label>
+              </div>
+
+              <div class="float-end items-center">
+                <label for="search">Search:&nbsp;</label>
+                <input type="search" value="" class="border-2"/>
+              </div>
+            </caption>
+
+            <thead>
+              <tr class="border-2 border bg-teal-600 text-white">
+                <th scope="col" class="px-4 py-3">#</th>
+                <th scope="col" class="">วันที่</th>
+                <th scope="col" class="">เวลา</th>
+                <th scope="col" class="">โอนจากบัญชี</th>
+                <th scope="col" class="">เข้าบัญชี</th>
+                <th scope="col" class="">จำนวนเงิน</th>
+                <th scope="col" class="">ผู้ทำรายการ</th>
+                <th scope="col" class="">ประเภทรายได้</th>
+                <th scope="col" class="">วันที่โอนย้าย</th>
+                <th scope="col" class="">คำสั่ง</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-2">
+                <td>1</td>
+                <td class="">29/06/2024</td>
+                <td class="">19.09.98</td>
+                <td class="flex">
+                  <img src="./access/scb.png" alt="" class="w-5 h-5 mr-1" />SCB
+                </td>
+                <td class="">
+                  <div class="flex">
+                    <img src="./access/scb.png" alt="" class="w-5 h-5 mr-1" />
+                    SCB 708-226791-3
+                  </div>
+                </td>
+                <td class="">1,087.00</td>
+                <td class="">Auto</td>
+                <td class="">All Outlet Revenue</td>
+                <td class="">-</td>
+                <td class="btn-content2 m-2">ทำรายการ</td>
+              </tr>
+              <tr class="border-2">
+                <td>2</td>
+                <td class="">29/06/2024</td>
+                <td class="">19.09.98</td>
+                <td class="flex">
+                  <img src="./access/kbank.png" alt="" class="w-5 h-5 mr-1" />
+                  KBNK
+                </td>
+                <td class=" ">
+                  <div class="flex">
+                    <img src="./access/kbank.png" alt="" class="w-5 h-5 mr-1" />
+                    KBNK 708-226791-3
+                  </div>
+                </td>
+                <td class="">1,087.00</td>
+                <td class="">Auto</td>
+                <td class="">All Outlet Revenue</td>
+                <td class="">-</td>
+                <td class="btn-content2 m-2">ทำรายการ</td>
+              </tr>
+            </tbody>
+            <caption class="caption-bottom py-2">
+              
+                <div
+                  class="flex justify-between"
+                >
+                  <div>
+                    <p class="text-sm text-gray-700">
+                      Showing
+                      <span class="font-medium">41</span>
+                      to
+                      <span class="font-medium">47</span>
+                      of
+                      <span class="font-medium">47</span>
+                      results
+                    </p>
+                  </div>
+
+                  <div>ยอดรวมทั้งหมด <span class="font-semibold">68,666.00 </span>บาท</div>
+                  <div>
+                    <nav
+                      class="isolate inline-flex -space-x-px rounded-md shadow-sm"
+                      aria-label="Pagination"
+                    >
+                      <a
+                        href="#"
+                        class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300"
+                      >
+                        
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                      <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                      <a
+                        href="#"
+                        aria-current="page"
+                        class="relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        >1</a
+                      >
+                      <a
+                        href="#"
+                        class="relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        >2</a
+                      >
+                      <a
+                        href="#"
+                        class="relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        >3</a
+                      >
+                      <a
+                        href="#"
+                        class="relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        >4</a
+                      >
+                      <a
+                        href="#"
+                        class="relative items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 bg-teal-700 text-white"
+                        >5</a
+                      >
+                      <a
+                        href="#"
+                        class="relative items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300"
+                      >
+                        
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                    
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd"
+                          />
+
+                        </svg>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </caption>
+          </table>
+        </div>
+
+        <!-- <div class="border border-4 border-red-500">
+            <table class="table-fixed will-change-auto whitespace-nowrap md:whitespace-nowrap ">
+        <thead class="border bg-teal-700 align-middle h-1">
+          <tr>
+            <th scope="col" class="px-4 py-3">#</th>
+            <th scope="col" class="">วันที่</th>
+            <th scope="col" class="">เวลา</th>
+            <th scope="col" class=" flex flex-nowrap">โอนจากบัญชี</th>
+            <th scope="col" class="">เข้าบัญชี</th>
+            <th scope="col" class="px-2 py-3">จำนวนเงิน</th>
+            <th scope="col" class="px-2 py-3">ผู้ทำรายการ</th>
+            <th scope="col" class="px-2 py-3">ประเภทรายได้</th>
+            <th scope="col" class="px-2 py-3">วันที่โอนย้าย</th>
+            <th scope="col" class="px-2 py-3">คำสั่ง</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border border-b-orange-800">
+            <td>1</td>
+            <td class="px-2 py-3">29/06/2024</td>
+            <td class="px-2 py-3">19.09.98</td>
+            <td class="px-2 py-3 flex">
+              <img src="../accese/scb.png" alt="" class="w-5 h-5 mr-1" />SCB
+            </td>
+            <td class="px-2 py-3">SCB 708-226791-3</td>
+            <td class="px-2 py-3">1,087.00</td>
+            <td class="px-2 py-3">Auto</td>
+            <td class="px-2 py-3">Auto Outlet Revenue</td>
+            <td class="px-2 py-3">-</td>
+            <td class="px-2 py-3 border-red-300">ทำรายการ</td>
+          </tr>
+          <tr class="border border-b-orange-800">
+            <td>2</td>
+            <td class="px-2 py-3">29/06/2024</td>
+            <td class="px-2 py-3">19.09.98</td>
+            <td class="px-2 py-3 flex">
+              <img src="../accese/kbank.png" alt="" class="w-5 h-5 mr-1" /> KBNK
+            </td>
+            <td class="px-2 py-3">KBNK 708-226791-3</td>
+            <td class="px-2 py-3">1,087.00</td>
+            <td class="px-2 py-3">Auto</td>
+            <td class="px-2 py-3">Auto Outlet Revenue</td>
+            <td class="px-2 py-3">-</td>
+            <td class="px-2 py-3 border-red-300">ทำรายการ</td>
+          </tr>
+        </tbody>
+      </table> -->
+      </div>
+    </div>
+  </body>
+</html>
