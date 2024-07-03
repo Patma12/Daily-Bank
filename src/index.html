@@ -19,21 +19,21 @@
     <title>Daily Bank</title>
   </head>
   <body>
-    <h1 class="text-2xl font-bold text-neutral-600 py-2">
+    <h1 class="text-2xl font-bold text-neutral-600 py-2 max-sm:text-lg">
       Daily Bank Transaction Revenue
     </h1>
 
-    <div class="section-content1 grid grid-cols-1 md:grid-cols-3 gap-4  ">
+    <div class="section-content1 grid grid-cols-1 md:grid-cols-3 gap-4 max-sm:flex-col ">
       <div class="h-full flex items-center justify-center md:col-span-1">
         <div
           class="text-white [text-shadow:_2px_2px_2px_rgb(0_0_0_/_70%)] flex flex-col justify-center items-center border-solid border-4 rounded-full border-teal-200/20 w-56 h-56"
         >
-          <h1 class="text-3xl">68,666.00</h1>
+          <h1 class="text-3xl sm:text-black max-sm:text-black">68,666.00</h1>
           <p class="text-l">Total Revenew</p>
         </div>
       </div>
 
-      <div class="grid md:col-span-2 gap-4 grid-cols-2 ">
+      <div class="grid md:col-span-2 gap-4 grid-cols-2 max-sm:grid-cols-1">
 
         <div class="btn-content">
           <div class="flex flex-col">
@@ -106,7 +106,7 @@
     <div>
       <div>
         <h1 class="text-2xl font-bold text-neutral-600 py-2">Detail</h1>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:px-0 sm:px-5">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:px-0 sm:px-5 max-sm:grid-cols-1">
           <div class="btn-content2">
             <div class="flex flex-col mr-8">
               <p>Trasfer Revenue</p>
@@ -276,14 +276,14 @@ function myFunction() {
         </div>
       </div>
       <div class="bg-white rounded-xl ">
-        <div>1
+        <div>
 
-        <div class="grid grid-cols-3 flex-col gap-8 w-3/4">
+        <div class="grid grid-cols-3 w-3/4 max-sm:grid-cols-1  max-sm:w-full ">
 
-          <div class="col-span-2 w-full">
-<div class="">
+          <div class="col-span-2 flex">
+<div class="w-full">
 
-  <div class="flex flex-col md:flex-row gap-4 m-4">
+  <div class="flex flex-col md:flex-row gap-4 m-4 max-sm:mx-2 max-sm:m-2 max-sm:flex max-sm:gap-1 max-sm:flex-row ">
       <select class="pl-2 py-2 rounded-lg border-2">
         <option>วันที่</option>
         <option value="">01</option>
@@ -354,7 +354,7 @@ function myFunction() {
         <option value="">2029</option>
       </select>
 </div>
-<div class="flex flex-col md:flex-row  gap-4 m-4">
+<div class="flex flex-col md:flex-row  gap-4 m-4 max-sm:flex">
       <select class="form-select pl-2 py-2 rounded-lg border-2 ">
         <option value="">ประเภทรายได้ทั้งหมด</option>
       </select>
@@ -365,11 +365,13 @@ function myFunction() {
 </div>
 </div>
       </div>
-      <div class="place-content-center">
+      <div class="max-sm:flex max-sm:justify-center flex items-center ml-4">
 
-      <input type="submit" class="text-white bg-teal-700 py-6 rounded-lg px-3 "  value="ค้นหา" />
+      <input type="submit" class="text-white bg-teal-700 py-6 max-sm:py-2 px-3 rounded-xl"  value="ค้นหา" />
     </div>
     </div>
+    
+    
 
 <!-- table -->
         </div>
@@ -565,7 +567,7 @@ function myFunction() {
             <caption class="caption-bottom py-2">
               
                 <div
-                  class="flex justify-between"
+                  class="flex justify-between max-sm:justify-start max-sm:flex-col max-sm:items-start max-sm:p-4 max-sm:gap-2"
                 >
                   <div>
                     <p class="text-sm text-gray-700">
@@ -608,7 +610,7 @@ function myFunction() {
                       >
                       <a
                         href="#"
-                        class="hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        class="max-sm:hidden hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
                         >2</a
                       >
                       <a
@@ -618,9 +620,15 @@ function myFunction() {
                       >
                       <a
                         href="#"
-                        class="hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        class="max-sm:hidden hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
                         >4</a
                       >
+                      <a
+                        href="#"
+                        class="md:hidden hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold text-teal-700 ring-1 ring-inset ring-gray-300"
+                        >...</a
+                      >
+
                       <a
                         href="#"
                         class="hover:bg-slate-100 relative items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 bg-teal-700 text-white"
@@ -653,4 +661,3 @@ function myFunction() {
     </div>
   </body>
 </html>
-icon page
